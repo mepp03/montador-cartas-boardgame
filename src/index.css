@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .sheet,
+  .sheet * {
+    visibility: visible;
+  }
+  .sheet {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.card-with-vertical-lines::before,
+.card-with-vertical-lines::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: black;
+  top: 0;
+}
+
+.card-with-vertical-lines::before {
+  left: 0;
+}
+
+.card-with-vertical-lines::after {
+  right: 0;
+}
